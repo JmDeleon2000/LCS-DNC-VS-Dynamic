@@ -1,7 +1,7 @@
-X = 'ABCD'
-Y = 'ACBAD'
+X = 'GTCGTTCGGCTCTTAAA'
+Y = 'ACCGGTCGAGCCGCCGAA'
 
-def LCS(a, b):
+def DNC_LCS(a, b):
     def LCS_i(a, b, i, j):
         if (len(a) == i or len(b) == j):
             return ''
@@ -11,12 +11,11 @@ def LCS(a, b):
         x = LCS_i(a, b, i, j+1)
         y = LCS_i(a, b, i+1, j)
 
-
         if len(x) > len(y):
             return x
         return y
     
     return LCS_i(a, b, 0, 0)
 
-print(LCS(X, Y))
+#print(DNC_LCS(X, Y))
 
